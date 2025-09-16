@@ -3,10 +3,7 @@ var spanOutput, main,
 
 function getElements() {
     spanOutput = document.querySelector("span.output");
-    btnDemo = document.querySelector("button.demo");
-    btnWrite = document.querySelector("button.write");
-    btnAlert = document.querySelector("button.alert");
-    btnConsole = document.querySelector("button.console");
+    main = document.querySelector("main");
 }
 
 function sayHello() {
@@ -25,10 +22,20 @@ function writeConsole() {
     console.log("This is a console log message.");
 }
 
+function handleBtnClick(event) {
+    const buttonClass = event.target.className;
+
+    if (buttonClass === "demo")
+        sayHello();
+    else if (buttonClass === "write")
+        writeText();
+    else if (buttonClass === "alert")
+        alertUser();
+    else if (buttonClass === "console")
+        writeConsole();
+}
+
 (function() {
     getElements();
-    btnDemo.addEventListener("click", sayHello);
-    btnWrite.addEventListener("click", writeText);
-    btnAlert.addEventListener("click", alertUser);
-    btnConsole.addEventListener("click", writeConsole);
+    main.addEventListener("click",  handleBtnClick);
 })();
