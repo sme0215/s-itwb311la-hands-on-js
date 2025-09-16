@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 10px;
+}
+
+button,
+input {
+    width: 20%;
+    height: auto;
+}
