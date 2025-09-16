@@ -22,6 +22,14 @@ function writeConsole() {
     console.log("This is a console log message.");
 }
 
+function addNumbers() {
+    let num1Text = document.querySelector("#num1").value;
+    let num2Text = document.querySelector("#num2").value;
+    let num1 = parseInt(num1Text);
+    let num2 = parseInt(num2Text);
+    spanOutput.textContent = num1 + num2;
+}
+
 function handleBtnClick(event) {
     const buttonClass = event.target.className;
 
@@ -33,6 +41,8 @@ function handleBtnClick(event) {
         alertUser();
     else if (buttonClass === "console")
         writeConsole();
+    else if (buttonClass === "add")
+        addNumbers();
 }
 
 (function() {
