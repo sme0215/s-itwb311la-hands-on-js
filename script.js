@@ -1,16 +1,16 @@
 var spanOutput,
-    btnWrite;
+    btnDemo;
 
 function getElements() {
     spanOutput = document.querySelector("span.output");
-    btnWrite = document.querySelector("button.demo");
+    btnDemo = document.querySelector("button.demo");
 }
 
-function writeText() {
+function sayHello() {
     spanOutput.textContent = "Hello JavaScript";
 }
 
 (function() {
     getElements();
-    btnWrite.addEventListener("click", writeText);
+    btnDemo.addEventListener("click", sayHello);
 })();
